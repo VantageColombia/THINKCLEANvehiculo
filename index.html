@@ -209,7 +209,7 @@
       color: white; font-weight: 800; font-size: .95rem;
       display: flex; align-items: center; justify-content: center;
     }
-    .step-body {}
+    
     .step-title { font-size: 1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 6px; }
     .step-desc { font-size: .875rem; color: var(--text-mid); line-height: 1.7; }
 
@@ -725,15 +725,13 @@
         position:absolute;inset:0;z-index:0;
         background-image: url('./styles/1.svg');
         background-size:cover;background-position:center;
-        opacity:0.07;
-        transition:opacity .5s ease;
+        opacity:0.12;
         pointer-events:none;
-        width: 600px;
+        width: 10000px;
         margin-left: 260px;
       "></div>
 
-      <!-- LEFT: city list -->
-      <div style="position:relative;z-index:2;flex:0 0 260px;padding:40px 32px;border-right:1px solid var(--border);background:rgba(255,255,255,0.85);">
+      <div style="position:relative;z-index:2;flex:0 0 260px;padding:38px 3px;border-right:1px solid var(--border);background:rgba(255,255,255,0.85);">
         <p style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-dark);margin-bottom:14px;">Ciudades principales</p>
         <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:24px;">
           <div class="city-item main" style="cursor:pointer;" onmouseenter="highlightCity('bogota')" onmouseleave="unhighlightCity()"><span class="city-dot"></span>Bogotá <span style="margin-left:auto;font-size:.6rem;background:var(--teal-dark);color:white;padding:2px 6px;border-radius:4px;">HQ</span></div>
@@ -754,70 +752,62 @@
         </div>
       </div>
 
-      <!-- RIGHT: interactive SVG map -->
-      <div style="position:relative;z-index:2;flex:1;min-width:280px;display:flex;align-items:center;justify-content:center;padding:32px;"
-           onmouseenter="document.getElementById('map-bg-img').style.opacity='0.18'"
-           onmouseleave="document.getElementById('map-bg-img').style.opacity='0.07'">
+      <div style="position:relative;z-index:2;flex:1;min-width:280px;display:flex;align-items:center;justify-content:center;padding:0px; padding-right: 0px;">
         <div style="position:relative;width:100%;max-width:360px;">
-          <svg id="interactive-map" viewBox="0 0 360 500" width="100%" style="display:block;">
-            <!-- Colombia shape -->
+          <svg id="interactive-map" viewBox="0 0 520 670" width="150%" style="display:block;">
             <defs>
               <filter id="glow-city"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
-            <path d="M120,14 L155,18 L188,12 L214,36 L236,50 L248,74 L235,108 L258,132 L272,158 L260,192 L282,216 L294,242 L280,278 L258,302 L244,338 L228,374 L208,402 L188,422 L170,432 L152,420 L126,388 L100,354 L84,318 L72,280 L60,244 L72,208 L84,174 L70,140 L82,106 L94,74 L80,46 L96,28 Z"
-              fill="#EBF5F4" stroke="#43948B" stroke-width="2" style="filter:drop-shadow(0 4px 16px rgba(57,128,120,0.15))"/>
+            
+            <image href="./styles/1.svg" x="-75" y="-87" width="620" height="770" preserveAspectRatio="xMidYMid meet" style="filter:drop-shadow(0 4px 16px rgba(57,128,120,0.15));" />
 
-            <!-- BOGOTÁ - HQ (main, larger) -->
-            <g class="map-city-dot" id="dot-bogota" data-city="bogota" style="cursor:pointer;"
-               onclick="openPopup('bogota')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="178" cy="238" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-              <circle cx="178" cy="238" r="7" fill="#398078"/>
-              <circle cx="178" cy="238" r="3" fill="white"/>
-              <text x="193" y="243" font-family="Montserrat,sans-serif" font-size="11" font-weight="800" fill="#398078">Bogotá ★</text>
+            <g class="map-city-dot" id="dot-bogota" data-city="bogota" style="cursor:pointer;" onclick="openPopup('bogota')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
+              <circle cx="178" cy="238" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+              <circle cx="178" cy="238" r="6" fill="#398078"/>
+              <text x="190" y="242" font-family="Montserrat,sans-serif" font-size="11" font-weight="800" fill="#398078">Bogotá ★</text>
             </g>
-
             <!-- MEDELLÍN -->
             <g class="map-city-dot" id="dot-medellin" data-city="medellin" style="cursor:pointer;"
                onclick="openPopup('medellin')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="178" cy="238" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-              <circle cx="178" cy="238" r="7" fill="#398078"/>
-              <circle cx="178" cy="238" r="3" fill="white"/>
+              <circle cx="150" cy="170" ... />
+<circle cx="150" cy="170" ... />
+<circle cx="150" cy="170" ... />
               <text x="140" y="188" font-family="Montserrat,sans-serif" font-size="9" font-weight="700" fill="#3d5a57">Medellín</text>
             </g>
 
             <!-- CALI -->
             <g class="map-city-dot" id="dot-cali" data-city="cali" style="cursor:pointer;"
                onclick="openPopup('cali')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="178" cy="238" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-              <circle cx="178" cy="238" r="7" fill="#398078"/>
-              <circle cx="178" cy="238" r="3" fill="white"/>
+              <circle cx="140" cy="300" ... />
+<circle cx="140" cy="300" ... />
+<circle cx="140" cy="300" ... />
               <text x="128" y="282" font-family="Montserrat,sans-serif" font-size="9" font-weight="700" fill="#3d5a57">Cali</text>
             </g>
 
             <!-- BARRANQUILLA -->
             <g class="map-city-dot" id="dot-barranquilla" data-city="barranquilla" style="cursor:pointer;"
                onclick="openPopup('barranquilla')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="160" cy="82" r="8" fill="rgba(107,184,176,0.25)" class="pulse-dot" style="animation-delay:.2s"/>
-              <circle cx="160" cy="82" r="5" fill="#6BB8B0"/>
-              <circle cx="160" cy="82" r="2" fill="white"/>
+              <circle cx="160" cy="82" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+              <circle cx="160" cy="82" r="7" fill="#398078"/>
+              <circle cx="160" cy="82" r="3" fill="white"/>>
               <text x="172" y="86" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="700" fill="#3d5a57">Barranquilla</text>
             </g>
 
             <!-- CARTAGENA -->
             <g class="map-city-dot" id="dot-cartagena" data-city="cartagena" style="cursor:pointer;"
                onclick="openPopup('cartagena')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="178" cy="238" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-              <circle cx="178" cy="238" r="7" fill="#398078"/>
-              <circle cx="178" cy="238" r="3" fill="white"/>
+              <circle cx="140" cy="110" ... />
+<circle cx="140" cy="110" ... />
+<circle cx="140" cy="110" ... />
               <text x="144" y="112" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="700" fill="#3d5a57">Cartagena</text>
             </g>
 
             <!-- VILLAVICENCIO -->
             <g class="map-city-dot" id="dot-villavicencio" data-city="villavicencio" style="cursor:pointer;"
                onclick="openPopup('villavicencio')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-              <circle cx="178" cy="238" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-              <circle cx="178" cy="238" r="7" fill="#398078"/>
-              <circle cx="178" cy="238" r="3" fill="white"/>
+              <circle cx="210" cy="260" ... />
+<circle cx="210" cy="260" ... />
+<circle cx="210" cy="260" ... />
               <text x="194" y="268" font-family="Montserrat,sans-serif" font-size="8" font-weight="700" fill="#3d5a57">Villavicencio</text>
             </g>
           </svg>
@@ -879,18 +869,34 @@
 </section>
 
 <style>
-  .map-city-dot { transition: transform .2s ease; transform-origin: center; }
-  .map-city-dot:hover { transform: scale(1.25); }
+  transform-origin { 
+    transition: transform 0.2s ease-out; 
+    transform-origin: center; 
+  }
+  
+  /* Movimiento sutil de 2px hacia arriba */
+  transform-origin:hover { 
+    transform: translateY(-2px); 
+  }
+
+  .pulse-dot { 
+    animation: pulse 2s ease-in-out infinite; 
+  }
+
+  @keyframes pulse { 
+    0%, 100% { opacity: 0.4; transform: scale(1); } 
+    50% { opacity: 0.8; transform: scale(1.2); } 
+  }
 </style>
 
 <script>
   const cityData = {
     bogota:        { tag:'Oficinas Principales', title:'Bogotá',        location:'Cundinamarca · Sede Central', desc:'Nuestra sede principal. Atendemos concesionarios, talleres y flotas en Bogotá, Chía, Cota, Madrid y La Calera.', cx:178, cy:238 },
-    medellin:      { tag:'Oficina Regional',     title:'Medellín',      location:'Antioquia',                   desc:'Cobertura en el área metropolitana del Valle de Aburrá, incluyendo Rionegro y Amagá.',                      cx:178, cy:238 },
-    cali:          { tag:'Oficina Regional',     title:'Cali',          location:'Valle del Cauca',             desc:'Servicios de alistamiento vehicular para el suroccidente colombiano.',                                      cx:178, cy:238 },
-    barranquilla:  { tag:'Oficina Regional',     title:'Barranquilla',  location:'Atlántico',                   desc:'Presencia en la costa norte de Colombia con atención a concesionarios y flotas.',                          cx:178, cy:238  },
-    cartagena:     { tag:'Oficina Regional',     title:'Cartagena',     location:'Bolívar',                     desc:'Servicios especializados en la ciudad amurallada y su área de influencia.',                                 cx:178, cy:238 },
-    villavicencio: { tag:'Oficina Regional',     title:'Villavicencio', location:'Meta',                        desc:'Cobertura en los Llanos Orientales, atendiendo talleres y concesionarios de la región.',                   cx:178, cy:238 },
+    medellin:      { tag:'Oficina Regional',     title:'Medellín',      location:'Antioquia',                   desc:'Cobertura en el área metropolitana del Valle de Aburrá, incluyendo Rionegro y Amagá.',                      cx:150, cy:170 },
+    cali:          { tag:'Oficina Regional',     title:'Cali',          location:'Valle del Cauca',             desc:'Servicios de alistamiento vehicular para el suroccidente colombiano.',                                      cx:140, cy:300 },
+    barranquilla:  { tag:'Oficina Regional',     title:'Barranquilla',  location:'Atlántico',                   desc:'Presencia en la costa norte de Colombia con atención a concesionarios y flotas.',                           cx:170, cy:82  },
+    cartagena:     { tag:'Oficina Regional',     title:'Cartagena',     location:'Bolívar',                     desc:'Servicios especializados en la ciudad amurallada y su área de influencia.',                                 cx:140, cy:110  },
+    villavicencio: { tag:'Oficina Regional',     title:'Villavicencio', location:'Meta',                        desc:'Cobertura en los Llanos Orientales, atendiendo talleres y concesionarios de la región.',                   cx:210, cy:260 },
   };
 
   // viewBox is 0 0 360 500
@@ -938,14 +944,14 @@
     if (window.innerWidth > 768) openPopup(city);
   }
   function unhighlightCity() {
-    document.querySelectorAll('.map-city-dot').forEach(d => d.style.transform = '');
+    document.querySelectorAll('transform-origin').forEach(d => d.style.transform = '');
     if (window.innerWidth > 768) closePopup();
   }
 
   document.addEventListener('click', function(e) {
     const popup = document.getElementById('city-popup');
     if (!popup) return;
-    if (popup.style.display === 'block' && !popup.contains(e.target) && !e.target.closest('.map-city-dot')) {
+    if (popup.style.display === 'block' && !popup.contains(e.target) && !e.target.closest('transform-origin')) {
       closePopup();
     }
   });
