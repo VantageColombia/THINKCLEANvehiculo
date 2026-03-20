@@ -366,11 +366,10 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8 8 5 12 5 16a7 7 0 0014 0c0-4-3-8-7-14z"/></svg>
+    <div class="nav-logo">
+      <img src="./styles/2.svg" style="width: 300px;" alt="">
     </div>
-    <span class="nav-brand">Think Clean</span>
+
   </a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
@@ -773,21 +772,47 @@
       
       <image href="./styles/1.svg" x="0" y="0" width="520" height="670" preserveAspectRatio="xMidYMid meet" style="filter:drop-shadow(0 4px 16px rgba(57,128,120,0.15));" />
 
-      <g class="map-city-dot" id="dot-bogota" data-city="bogota" style="cursor:pointer;" onclick="openPopup('bogota')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-        <circle cx="260" cy="335" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
-        <circle cx="260" cy="335" r="7" fill="#398078"/>
-        <text x="275" y="340" font-family="Montserrat,sans-serif" font-size="14" font-weight="800" fill="#398078">Bogotá ★</text>
-      </g>
+      <!-- BOGOTA -->
+<g class="map-city-dot" onclick="openPopup('bogota')">
+  <circle cx="260" cy="335" r="12" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="260" cy="335" r="7" fill="#398078"/>
+  <text x="275" y="340" font-size="14" font-weight="800">Bogotá ★</text>
+</g>
 
-      <g class="map-city-dot" id="dot-medellin" data-city="medellin" style="cursor:pointer;" onclick="openPopup('medellin')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-        <circle cx="210" cy="240" r="6" fill="#398078"/>
-        <text x="140" y="245" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3d5a57">Medellín</text>
-      </g>
+<!-- MEDELLIN -->
+<g class="map-city-dot" onclick="openPopup('medellin')">
+  <circle cx="210" cy="240" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="210" cy="240" r="6" fill="#398078"/>
+  <text x="140" y="245" font-size="12">Medellín</text>
+</g>
 
-      <g class="map-city-dot" id="dot-barranquilla" data-city="barranquilla" style="cursor:pointer;" onclick="openPopup('barranquilla')" onmouseenter="hoverDot(this)" onmouseleave="unhoverDot(this)">
-        <circle cx="230" cy="115" r="6" fill="#398078"/>
-        <text x="245" y="120" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3d5a57">Barranquilla</text>
-      </g>
+<!-- CALI -->
+<g class="map-city-dot" onclick="openPopup('cali')">
+  <circle cx="200" cy="420" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="200" cy="420" r="6" fill="#398078"/>
+  <text x="210" y="425" font-size="12">Cali</text>
+</g>
+
+<!-- BARRANQUILLA -->
+<g class="map-city-dot" onclick="openPopup('barranquilla')">
+  <circle cx="230" cy="115" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="230" cy="115" r="6" fill="#398078"/>
+  <text x="245" y="120" font-size="12">Barranquilla</text>
+</g>
+
+<!-- CARTAGENA -->
+<g class="map-city-dot" onclick="openPopup('cartagena')">
+  <circle cx="200" cy="150" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="200" cy="150" r="6" fill="#398078"/>
+  <text x="210" y="155" font-size="12">Cartagena</text>
+</g>
+
+<!-- VILLAVICENCIO -->
+<g class="map-city-dot" onclick="openPopup('villavicencio')">
+  <circle cx="300" cy="380" r="10" fill="rgba(57,128,120,0.2)" class="pulse-dot"/>
+  <circle cx="300" cy="380" r="6" fill="#398078"/>
+  <text x="310" y="385" font-size="12">Villavicencio</text>
+</g>
 
       </svg>
       <div id="city-popup" style="
@@ -812,35 +837,7 @@
       </div>
     </div>
 
-    <!-- EDITABLE IMAGE CARD -->
-    <div class="reveal reveal-d2" style="
-      margin-top:32px;
-      border-radius:24px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      display:flex;flex-wrap:wrap;
-      background:white;
-      min-height:280px;
-    ">
-      <!-- Image side -->
-      <div style="
-        flex:0 0 340px;min-width:220px;
-        background-image:url('./styles/1.svg');
-        background-size:cover;background-position:center;
-        position:relative;overflow:hidden;
-        min-height:240px;
-        opacity:0.65;
-        transition:opacity .4s ease;
-      " onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.65'">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(57,128,120,0.3),transparent);"></div>
-      </div>
-      <!-- Text side -->
-      <div style="flex:1;padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
-        <p style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--teal-mid);margin-bottom:12px;">Escribe un subtítulo</p>
-        <h3 style="font-size:1.6rem;font-weight:900;color:var(--text-dark);letter-spacing:-.5px;margin-bottom:14px;line-height:1.2;">Escribe un título</h3>
-        <p style="font-size:.9rem;color:var(--text-mid);line-height:1.8;max-width:420px;">Escribe una descripción. Puedes hablar sobre este servicio, sede, o lo que consideres más relevante para tus clientes. Edita este texto directamente.</p>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -867,13 +864,49 @@
 
 <script>
   const cityData = {
-    bogota:        { tag:'Oficinas Principales', title:'Bogotá',        location:'Cundinamarca · Sede Central', desc:'Nuestra sede principal. Atendemos concesionarios, talleres y flotas en Bogotá, Chía, Cota, Madrid y La Calera.', cx:178, cy:238 },
-    medellin:      { tag:'Oficina Regional',     title:'Medellín',      location:'Antioquia',                   desc:'Cobertura en el área metropolitana del Valle de Aburrá, incluyendo Rionegro y Amagá.',                      cx:150, cy:170 },
-    cali:          { tag:'Oficina Regional',     title:'Cali',          location:'Valle del Cauca',             desc:'Servicios de alistamiento vehicular para el suroccidente colombiano.',                                      cx:140, cy:300 },
-    barranquilla:  { tag:'Oficina Regional',     title:'Barranquilla',  location:'Atlántico',                   desc:'Presencia en la costa norte de Colombia con atención a concesionarios y flotas.',                           cx:170, cy:82  },
-    cartagena:     { tag:'Oficina Regional',     title:'Cartagena',     location:'Bolívar',                     desc:'Servicios especializados en la ciudad amurallada y su área de influencia.',                                 cx:140, cy:110  },
-    villavicencio: { tag:'Oficina Regional',     title:'Villavicencio', location:'Meta',                        desc:'Cobertura en los Llanos Orientales, atendiendo talleres y concesionarios de la región.',                   cx:210, cy:260 },
-  };
+  bogota:{
+    tag:'Sede principal',
+    title:'Bogotá',
+    location:'Cundinamarca',
+    desc:'Centro principal de operaciones.',
+    cx:260, cy:335
+  },
+  medellin:{
+    tag:'Regional',
+    title:'Medellín',
+    location:'Antioquia',
+    desc:'Cobertura en el Valle de Aburrá.',
+    cx:210, cy:240
+  },
+  cali:{
+    tag:'Regional',
+    title:'Cali',
+    location:'Valle del Cauca',
+    desc:'Servicios en el suroccidente.',
+    cx:200, cy:420
+  },
+  barranquilla:{
+    tag:'Regional',
+    title:'Barranquilla',
+    location:'Atlántico',
+    desc:'Cobertura costa norte.',
+    cx:230, cy:115
+  },
+  cartagena:{
+    tag:'Regional',
+    title:'Cartagena',
+    location:'Bolívar',
+    desc:'Zona turística.',
+    cx:200, cy:150
+  },
+  villavicencio:{
+    tag:'Regional',
+    title:'Villavicencio',
+    location:'Meta',
+    desc:'Cobertura llanos.',
+    cx:300, cy:380
+  }
+};
 
   // viewBox is 0 0 360 500
   function openPopup(city) {
@@ -885,12 +918,12 @@
     document.getElementById('popup-desc').textContent  = d.desc;
 
     const svgWrap = popup.parentElement; // the relative div wrapping the SVG
-    const wrapW   = svgWrap.offsetWidth  || 360;
-    const wrapH   = svgWrap.offsetHeight || 500;
+    const wrapW   = svgWrap.offsetWidth  || 520;
+    const wrapH   = svgWrap.offsetHeight || 670;
 
     // Convert SVG viewBox coords (360×500) to actual px within the wrapper
-    const px = (d.cx / 360) * wrapW;
-    const py = (d.cy / 500) * wrapH;
+    const px = (d.cx / 520) * wrapW;
+    const py = (d.cy / 670) * wrapH;
     const popupW = 230;
 
     // Decide left/right and top/bottom
